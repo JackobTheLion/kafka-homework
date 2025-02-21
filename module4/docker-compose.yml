@@ -53,6 +53,8 @@ services:
       KAFKA_SSL_KEY_CREDENTIALS: credentials
     volumes:
       - ./infra_ssl/broker-0-cert:/etc/kafka/secrets
+      - ./infra_ssl/scripts:/scripts
+    entrypoint: [ "/bin/bash", "-c", "/etc/confluent/docker/run & /scripts/create-topic.sh && wait" ]
 
   kafka-server-1:
     image: confluentinc/cp-kafka:7.4.4

@@ -56,3 +56,8 @@ ZOOKEEPER_CRED_DIR=../infra_ssl/zookeeper
 rm -r $ZOOKEEPER_CRED_DIR
 mkdir $ZOOKEEPER_CRED_DIR
 cp zookeeper.sasl.jaas.conf $ZOOKEEPER_CRED_DIR/zookeeper.sasl.jaas.conf
+
+SCRIPT_DIR=../infra_ssl/scripts/
+rm -r $SCRIPT_DIR
+mkdir $SCRIPT_DIR
+cp create-topic.sh $SCRIPT_DIR/create-topic.sh
