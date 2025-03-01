@@ -1,0 +1,291 @@
+[main] INFO ru.yakovlev.config.PropertiesReader - Consumer properties:
+[main] INFO ru.yakovlev.config.PropertiesReader - 	auto.offset.reset = earliest
+[main] INFO ru.yakovlev.config.PropertiesReader - 	bootstrap.servers = rc1a-hle26o0d9368l3pt.mdb.yandexcloud.net:9091,rc1b-pp421aduloqh4jcg.mdb.yandexcloud.net:9091,rc1d-8igeb47sq8lqapoh.mdb.yandexcloud.net:9091
+[main] INFO ru.yakovlev.config.PropertiesReader - 	group.id = my-group
+[main] INFO ru.yakovlev.config.PropertiesReader - 	key.deserializer = org.apache.kafka.common.serialization.IntegerDeserializer
+[main] INFO ru.yakovlev.config.PropertiesReader - 	login = consumer
+[main] INFO ru.yakovlev.config.PropertiesReader - 	password = 12345678
+[main] INFO ru.yakovlev.config.PropertiesReader - 	sasl.jaas.config = org.apache.kafka.common.security.scram.ScramLoginModule required username="consumer" password="12345678";
+[main] INFO ru.yakovlev.config.PropertiesReader - 	sasl.mechanism = SCRAM-SHA-512
+[main] INFO ru.yakovlev.config.PropertiesReader - 	security.protocol = SASL_SSL
+[main] INFO ru.yakovlev.config.PropertiesReader - 	ssl.truststore.location = C:\Users\riddi\dev\kafka-homework\module5\src\main\resources\ssl
+[main] INFO ru.yakovlev.config.PropertiesReader - 	ssl.truststore.password = 123456
+[main] INFO ru.yakovlev.config.PropertiesReader - 	value.deserializer = org.apache.kafka.common.serialization.StringDeserializer
+[main] INFO ru.yakovlev.config.PropertiesReader - Producer properties:
+[main] INFO ru.yakovlev.config.PropertiesReader - 	bootstrap.servers = rc1a-hle26o0d9368l3pt.mdb.yandexcloud.net:9091,rc1b-pp421aduloqh4jcg.mdb.yandexcloud.net:9091,rc1d-8igeb47sq8lqapoh.mdb.yandexcloud.net:9091
+[main] INFO ru.yakovlev.config.PropertiesReader - 	key.serializer = org.apache.kafka.common.serialization.IntegerSerializer
+[main] INFO ru.yakovlev.config.PropertiesReader - 	login = producer
+[main] INFO ru.yakovlev.config.PropertiesReader - 	password = 12345678
+[main] INFO ru.yakovlev.config.PropertiesReader - 	sasl.jaas.config = org.apache.kafka.common.security.scram.ScramLoginModule required username="producer" password="12345678";
+[main] INFO ru.yakovlev.config.PropertiesReader - 	sasl.mechanism = SCRAM-SHA-512
+[main] INFO ru.yakovlev.config.PropertiesReader - 	security.protocol = SASL_SSL
+[main] INFO ru.yakovlev.config.PropertiesReader - 	ssl.truststore.location = C:\Users\riddi\dev\kafka-homework\module5\src\main\resources\ssl
+[main] INFO ru.yakovlev.config.PropertiesReader - 	ssl.truststore.password = 123456
+[main] INFO ru.yakovlev.config.PropertiesReader - 	value.serializer = org.apache.kafka.common.serialization.StringSerializer
+[pool-1-thread-2] INFO org.apache.kafka.clients.producer.ProducerConfig - ProducerConfig values:
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [rc1a-hle26o0d9368l3pt.mdb.yandexcloud.net:9091, rc1b-pp421aduloqh4jcg.mdb.yandexcloud.net:9091, rc1d-8igeb47sq8lqapoh.mdb.yandexcloud.net:9091]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.IntegerSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = [hidden]
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = SCRAM-SHA-512
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = SASL_SSL
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = C:\Users\riddi\dev\kafka-homework\module5\src\main\resources\ssl
+	ssl.truststore.password = [hidden]
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+[pool-1-thread-1] INFO org.apache.kafka.clients.consumer.ConsumerConfig - ConsumerConfig values:
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [rc1a-hle26o0d9368l3pt.mdb.yandexcloud.net:9091, rc1b-pp421aduloqh4jcg.mdb.yandexcloud.net:9091, rc1d-8igeb47sq8lqapoh.mdb.yandexcloud.net:9091]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-my-group-1
+	client.rack =
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = my-group
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.IntegerDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = [hidden]
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = SCRAM-SHA-512
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = SASL_SSL
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = C:\Users\riddi\dev\kafka-homework\module5\src\main\resources\ssl
+	ssl.truststore.password = [hidden]
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+[pool-1-thread-2] INFO org.apache.kafka.clients.producer.KafkaProducer - [Producer clientId=producer-1] Instantiated an idempotent producer.
+[pool-1-thread-2] INFO org.apache.kafka.common.security.authenticator.AbstractLogin - Successfully logged in.
+[pool-1-thread-1] INFO org.apache.kafka.common.security.authenticator.AbstractLogin - Successfully logged in.
+[pool-1-thread-2] INFO org.apache.kafka.clients.producer.ProducerConfig - These configurations '[password, login]' were supplied but are not used yet.
+[pool-1-thread-2] INFO org.apache.kafka.common.utils.AppInfoParser - Kafka version: 3.5.0
+[pool-1-thread-2] INFO org.apache.kafka.common.utils.AppInfoParser - Kafka commitId: c97b88d5db4de28d
+[pool-1-thread-2] INFO org.apache.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1741550298232
+[pool-1-thread-1] INFO org.apache.kafka.clients.consumer.ConsumerConfig - These configurations '[login, password]' were supplied but are not used yet.
+[pool-1-thread-1] INFO org.apache.kafka.common.utils.AppInfoParser - Kafka version: 3.5.0
+[pool-1-thread-1] INFO org.apache.kafka.common.utils.AppInfoParser - Kafka commitId: c97b88d5db4de28d
+[pool-1-thread-1] INFO org.apache.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1741550298285
+[pool-1-thread-1] INFO org.apache.kafka.clients.consumer.KafkaConsumer - [Consumer clientId=consumer-my-group-1, groupId=my-group] Subscribed to topic(s): test
+[kafka-producer-network-thread | producer-1] INFO org.apache.kafka.clients.Metadata - [Producer clientId=producer-1] Cluster ID: 5hf9hnG1SkCr_Zw3vgNoPQ
+[pool-1-thread-1] INFO org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-my-group-1, groupId=my-group] Cluster ID: 5hf9hnG1SkCr_Zw3vgNoPQ
+[kafka-producer-network-thread | producer-1] INFO org.apache.kafka.clients.producer.internals.TransactionManager - [Producer clientId=producer-1] ProducerId set to 1003 with epoch 0
+[pool-1-thread-1] INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - [Consumer clientId=consumer-my-group-1, groupId=my-group] Discovered group coordinator rc1d-8igeb47sq8lqapoh.mdb.yandexcloud.net:9091 (id: 2147483644 rack: null)
+[pool-1-thread-1] INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - [Consumer clientId=consumer-my-group-1, groupId=my-group] (Re-)joining group
+[pool-1-thread-1] INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - [Consumer clientId=consumer-my-group-1, groupId=my-group] Request joining group due to: need to re-join with the given member-id: consumer-my-group-1-fb19f654-0303-4d56-bcdd-ba83e00093f3
+[pool-1-thread-1] INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - [Consumer clientId=consumer-my-group-1, groupId=my-group] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+[pool-1-thread-1] INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - [Consumer clientId=consumer-my-group-1, groupId=my-group] (Re-)joining group
+[pool-1-thread-2] INFO org.apache.kafka.clients.producer.KafkaProducer - [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 9223372036854775807 ms.
+[pool-1-thread-2] INFO org.apache.kafka.common.metrics.Metrics - Metrics scheduler closed
+[pool-1-thread-2] INFO org.apache.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+[pool-1-thread-2] INFO org.apache.kafka.common.metrics.Metrics - Metrics reporters closed
+[pool-1-thread-2] INFO org.apache.kafka.common.utils.AppInfoParser - App info kafka.producer for producer-1 unregistered
+[pool-1-thread-1] INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - [Consumer clientId=consumer-my-group-1, groupId=my-group] Successfully joined group with generation Generation{generationId=2, memberId='consumer-my-group-1-fb19f654-0303-4d56-bcdd-ba83e00093f3', protocol='range'}
+[pool-1-thread-1] INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - [Consumer clientId=consumer-my-group-1, groupId=my-group] Finished assignment for group at generation 2: {consumer-my-group-1-fb19f654-0303-4d56-bcdd-ba83e00093f3=Assignment(partitions=[test-0, test-1, test-2])}
+[pool-1-thread-1] INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - [Consumer clientId=consumer-my-group-1, groupId=my-group] Successfully synced group in generation Generation{generationId=2, memberId='consumer-my-group-1-fb19f654-0303-4d56-bcdd-ba83e00093f3', protocol='range'}
+[pool-1-thread-1] INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - [Consumer clientId=consumer-my-group-1, groupId=my-group] Notifying assignor about the new Assignment(partitions=[test-0, test-1, test-2])
+[pool-1-thread-1] INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - [Consumer clientId=consumer-my-group-1, groupId=my-group] Adding newly assigned partitions: test-0, test-1, test-2
+[pool-1-thread-1] INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - [Consumer clientId=consumer-my-group-1, groupId=my-group] Setting offset for partition test-1 to the committed offset FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[rc1a-hle26o0d9368l3pt.mdb.yandexcloud.net:9091 (id: 1 rack: ru-central1-a)], epoch=0}}
+[pool-1-thread-1] INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - [Consumer clientId=consumer-my-group-1, groupId=my-group] Setting offset for partition test-0 to the committed offset FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[rc1d-8igeb47sq8lqapoh.mdb.yandexcloud.net:9091 (id: 3 rack: ru-central1-d)], epoch=0}}
+[pool-1-thread-1] INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - [Consumer clientId=consumer-my-group-1, groupId=my-group] Setting offset for partition test-2 to the committed offset FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[rc1b-pp421aduloqh4jcg.mdb.yandexcloud.net:9091 (id: 2 rack: ru-central1-b)], epoch=0}}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 606, value: {"id":606,"name":"Egor"}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 406, value: {"id":406,"name":"Ivan"}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 110, value: {"id":110,"name":"Oleg"}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 249, value: {"id":249,"name":"Petr"}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 257, value: {"id":257,"name":"Andrey"}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 454, value: {"id":454,"name":"Ivan"}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 902, value: {"id":902,"name":"Anastasia"}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 146, value: {"id":146,"name":"Andrey"}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 147, value: {"id":147,"name":"Egor"}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 394, value: {"id":394,"name":"Anastasia"}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 650, value: {"id":650,"name":"Petr"}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 914, value: {"id":914,"name":"Oleg"}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 911, value: {"id":911,"name":"Petr"}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 133, value: {"id":133,"name":"Elena"}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 193, value: {"id":193,"name":"Petr"}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 350, value: {"id":350,"name":"Andrey"}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 495, value: {"id":495,"name":"Julia"}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 377, value: {"id":377,"name":"Andrey"}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 703, value: {"id":703,"name":"Petr"}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 905, value: {"id":905,"name":"Anastasia"}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 317, value: {"id":317,"name":"Olga"}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 731, value: {"id":731,"name":"Julia"}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 482, value: {"id":482,"name":"Andrey"}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 788, value: {"id":788,"name":"Olga"}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 609, value: {"id":609,"name":"Oleg"}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 666, value: {"id":666,"name":"Ivan"}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 583, value: {"id":583,"name":"Egor"}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 959, value: {"id":959,"name":"Olga"}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 328, value: {"id":328,"name":"Anastasia"}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 161, value: {"id":161,"name":"Julia"}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 198, value: {"id":198,"name":"Julia"}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 533, value: {"id":533,"name":"Julia"}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 407, value: {"id":407,"name":"Andrey"}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 995, value: {"id":995,"name":"Anastasia"}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 316, value: {"id":316,"name":"Oleg"}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 568, value: {"id":568,"name":"Olga"}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 994, value: {"id":994,"name":"Oleg"}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 553, value: {"id":553,"name":"Egor"}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 795, value: {"id":795,"name":"Julia"}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 277, value: {"id":277,"name":"Olga"}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 794, value: {"id":794,"name":"Ivan"}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 943, value: {"id":943,"name":"Ekaterina"}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 334, value: {"id":334,"name":"Oleg"}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 467, value: {"id":467,"name":"Ivan"}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 246, value: {"id":246,"name":"Egor"}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 540, value: {"id":540,"name":"Julia"}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 467, value: {"id":467,"name":"Julia"}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 41, value: {"id":41,"name":"Ivan"}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 365, value: {"id":365,"name":"Olga"}
+[pool-1-thread-1] INFO ru.yakovlev.consumer.YCConsumer - Read from Kafka key: 610, value: {"id":610,"name":"Oleg"}
