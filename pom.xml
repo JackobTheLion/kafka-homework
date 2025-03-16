@@ -8,6 +8,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>module3</module>
+        <module>module2</module>
+        <module>module1</module>
     </modules>
 
     <properties>
