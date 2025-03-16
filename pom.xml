@@ -10,6 +10,10 @@
         <module>module1</module>
     </modules>
 
+    <modules>
+        <module>module2</module>
+    </modules>
+
     <properties>
         <java.version>17</java.version>
         <kafka.version>3.8.0</kafka.version>
