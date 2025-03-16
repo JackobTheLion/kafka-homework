@@ -1,0 +1,63 @@
+#!/bin/bash
+
+NUM_SERVERS=3
+PASSWORD="password"
+BASE_DIR=./certs
+
+rm -r $BASE_DIR
+mkdir $BASE_DIR
+echo $PASSWORD > $BASE_DIR/credentials
+
+# Создаем приватный ключ для CA
+openssl genpkey -algorithm RSA -out $BASE_DIR/ca.key
+# Создаем самоподписанный сертификат CA
+openssl req -new -x509 -key $BASE_DIR/ca.key -out $BASE_DIR/ca.crt -days 365 -subj "//CN=Kafka-CA"
+echo "Creating truststore"
+# Создаем truststore (добавляем CA)
+keytool -import -file $BASE_DIR/ca.crt -alias rootCA -keystore $BASE_DIR/truststore.jks -storepass $PASSWORD -noprompt
+
+for i in $(seq 0 $((NUM_SERVERS - 1)))
+do
+    echo "Creating certificate for server $i"
+    # Создаем приватный ключ для сервера
+    openssl genpkey -algorithm RSA -out $BASE_DIR/kafka-server-$i.key
+    # Создаем CSR (запрос на сертификат)
+    openssl req -new -key $BASE_DIR/kafka-server-$i.key -out $BASE_DIR/kafka-server-$i.csr -subj "//CN=kafka-server-$i"
+    # Подписываем сертификат с CA
+    openssl x509 -req -in $BASE_DIR/kafka-server-$i.csr -CA $BASE_DIR/ca.crt -CAkey $BASE_DIR/ca.key -CAcreateserial -out $BASE_DIR/kafka-server-$i.crt -days 365
+    # Конвертируем приватный ключ и сертификат в P12
+    openssl pkcs12 -export -in $BASE_DIR/kafka-server-$i.crt -inkey $BASE_DIR/kafka-server-$i.key -out $BASE_DIR/kafka-server-$i.p12 -name kafka-server-$i -password pass:$PASSWORD
+    # Импортируем в Keystore
+    keytool -importkeystore -destkeystore $BASE_DIR/kafka-server-$i.jks -srckeystore $BASE_DIR/kafka-server-$i.p12 -srcstoretype PKCS12 -alias kafka-server-$i -storepass $PASSWORD -srcstorepass $PASSWORD
+    echo "Import done!"
+
+    CRED_DIR=../infra_ssl/broker-$i-cert
+    rm -r $CRED_DIR
+    mkdir $CRED_DIR
+    cp $BASE_DIR/kafka-server-$i.jks $CRED_DIR/kafka.keystore.jks
+    cp $BASE_DIR/credentials $CRED_DIR/credentials
+    cp $BASE_DIR/truststore.jks $CRED_DIR/kafka.truststore.jks
+    cp kafka_server_jaas.conf $CRED_DIR/kafka_server_jaas.conf
+done
+
+echo "Creating client certificate"
+# Создаем приватный ключ для клиента
+openssl genpkey -algorithm RSA -out $BASE_DIR/kafka-client.key
+# Создаем CSR для клиента
+openssl req -new -key $BASE_DIR/kafka-client.key -out $BASE_DIR/kafka-client.csr -subj "//CN=kafka-client"
+# Подписываем клиентский сертификат
+openssl x509 -req -in $BASE_DIR/kafka-client.csr -CA $BASE_DIR/ca.crt -CAkey $BASE_DIR/ca.key -CAcreateserial -out $BASE_DIR/kafka-client.crt -days 365
+# Конвертируем приватный ключ и сертификат клиента в P12
+openssl pkcs12 -export -in $BASE_DIR/kafka-client.crt -inkey $BASE_DIR/kafka-client.key -out $BASE_DIR/kafka-client.p12 -name kafka-client -password pass:$PASSWORD
+# Импортируем в Keystore
+keytool -importkeystore -destkeystore $BASE_DIR/kafka-client.jks -srckeystore $BASE_DIR/kafka-client.p12 -srcstoretype PKCS12 -alias kafka-client -storepass $PASSWORD -srcstorepass $PASSWORD
+
+ZOOKEEPER_CRED_DIR=../infra_ssl/zookeeper
+rm -r $ZOOKEEPER_CRED_DIR
+mkdir $ZOOKEEPER_CRED_DIR
+cp zookeeper.sasl.jaas.conf $ZOOKEEPER_CRED_DIR/zookeeper.sasl.jaas.conf
+
+SCRIPT_DIR=../infra_ssl/scripts/
+rm -r $SCRIPT_DIR
+mkdir $SCRIPT_DIR
+cp create-topic.sh $SCRIPT_DIR/create-topic.sh

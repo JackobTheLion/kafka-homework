@@ -7,6 +7,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
+        <module>module4</module>
         <module>module3</module>
         <module>module2</module>
         <module>module1</module>
